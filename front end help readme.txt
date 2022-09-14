@@ -57,3 +57,9 @@ ________________________________________________________________________________
 npm install @mui/material @emotion/react @emotion/styled styled-components
 
 ___________________________________________________________________________________________
+
+//free icons
+https://icons8.com/icons
+
+//free image library 
+https://www.pexels.com/

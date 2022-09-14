@@ -1,9 +1,11 @@
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import React from 'react'
 import styled from 'styled-components'
+import { FormControl, InputLabel, Select } from '@mui/material';
 
 const Container = styled.div`
     height: 60px;
@@ -51,7 +53,9 @@ const Right = styled.div`
 const MenuItem = styled.div`
     font-size: 14px ;
     cursor: pointer;
-    margin-left: 25px ;
+    margin-left: 15px ;
+    display: flex;
+    align-items: center;
 `
 
 
@@ -70,10 +74,28 @@ const Navbar = () => {
                 <Logo>RSFCA.</Logo>
             </Center>
             <Right>
+                <MenuItem>
+                    {/* <LocationOnOutlinedIcon style={{color:"gray",fontSize:16}}></LocationOnOutlinedIcon>
+                    &nbsp; DELHI */}
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            // value={age}
+                            label="Age"
+                            // onChange={handleChange}
+                        >
+                            <MenuItem value={10}>Ten</MenuItem>
+                            <MenuItem value={20}>Twenty</MenuItem>
+                            <MenuItem value={30}>Thirty</MenuItem>
+                        </Select>
+                        </FormControl>
+                </MenuItem>
                 <MenuItem>REGISTER</MenuItem>
                 <MenuItem>SIGN IN</MenuItem>
                 <MenuItem>
-                    <Badge badgeContent={0} color="secondary">
+                    <Badge badgeContent={1} color="secondary">
                         <ShoppingCartOutlinedIcon color="action" />
                     </Badge>
                 </MenuItem>
