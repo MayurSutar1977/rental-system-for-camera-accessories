@@ -1,0 +1,14 @@
+git clone <url>
+git status 
+git add .
+git commit -m "comment"
+git push 
+
+git branch -a
+git checkout branchname
+
+//https://devconnected.com/how-to-set-upstream-branch-on-git/#:~:text=Upstream%20branches%20are%20closely%20associated%20with%20remote%20branches.,how%20you%20can%20set%20upstream%20branches%20on%20Git.
+//https://www.w3schools.com/git/git_branch.asp?remote=github
+//https://www.wikihow.com/Delete-a-GitHub-Branch#:~:text=How%20to%20Delete%20a%20Branch%20on%20GitHub%201,branch%20will%20be%20deleted%20from%20your...%20See%20More.
+
+//https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/managing-a-branch-protection-rule
