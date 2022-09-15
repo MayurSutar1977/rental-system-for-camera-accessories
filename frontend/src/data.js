@@ -54,22 +54,22 @@ export const categories = [
 export const popularProducts = [
     {
         id:1,
-        img: "https://contents.mediadecathlon.com/p702598/k71c83df2c740516febe92bf6acf676b7/702598_default.jpg?format=auto&quality=60&f=800x0"
+        img: "https://images.pexels.com/photos/3335016/pexels-photo-3335016.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
     },
     {
         id:2,
-        img: "https://images-na.ssl-images-amazon.com/images/I/41EoJ6NmSGL.jpg"
+        img: "https://images.pexels.com/photos/3698552/pexels-photo-3698552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
         id:3,
-        img: "https://www.designsponge.com/wp-content/uploads/2011/07/quilty-belt-500px.jpg"
+        img: "https://images.pexels.com/photos/4336337/pexels-photo-4336337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
         id:4,
-        img: "https://th.bing.com/th/id/OIP.xXLM2CRpw6BzFtxj-XSGaAHaHa?pid=ImgDet&rs=1"
+        img: "https://images.pexels.com/photos/9660955/pexels-photo-9660955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
         id:5,
-        img: "https://th.bing.com/th/id/OIP.PUY6ZFLN9MqojRXhqrloawAAAA?pid=ImgDet&rs=1"
+        img: "https://images.pexels.com/photos/4225230/pexels-photo-4225230.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
     }
 ]

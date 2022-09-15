@@ -3,18 +3,21 @@ import Badge from '@mui/material/Badge';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-import React from 'react'
-import styled from 'styled-components'
-import { FormControl, InputLabel, Select } from '@mui/material';
+import React from "react";
+import styled from "styled-components";
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
     height: 60px;
+    ${mobile({ height: "50px" })}
 `
 const Wrapper = styled.div`
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${mobile({ padding: "10px 0px" })}
 `
 const Left = styled.div`
    flex: 1;
@@ -24,6 +27,7 @@ const Left = styled.div`
 const Language = styled.div`
     font-size: 14px;
     cursor: pointer;
+    ${mobile({ display: "none" })}
 `
 const SearchContainer = styled.div`
     border: 0.5px solid lightgrey ;
@@ -34,6 +38,7 @@ const SearchContainer = styled.div`
 `
 const Input = styled.input`
     border: none;
+    ${mobile({ width: "50px" })}
 `
 
 const Center = styled.div`
@@ -42,6 +47,7 @@ const Center = styled.div`
 `
 const Logo = styled.h1`
     font-weight: bold;
+    ${mobile({ fontSize: "24px" })}
 `
 
 const Right = styled.div`
@@ -49,6 +55,7 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    ${mobile({ flex: 2, justifyContent: "center" })}
 `
 const MenuItem = styled.div`
     font-size: 14px ;
@@ -56,6 +63,7 @@ const MenuItem = styled.div`
     margin-left: 15px ;
     display: flex;
     align-items: center;
+    ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `
 
 
@@ -75,9 +83,9 @@ const Navbar = () => {
             </Center>
             <Right>
                 <MenuItem>
-                    {/* <LocationOnOutlinedIcon style={{color:"gray",fontSize:16}}></LocationOnOutlinedIcon>
-                    &nbsp; DELHI */}
-                    <FormControl fullWidth>
+                    <LocationOnOutlinedIcon style={{color:"gray",fontSize:16}}></LocationOnOutlinedIcon>
+                    &nbsp; DELHI
+                    {/* <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Age</InputLabel>
                         <Select
                             labelId="demo-simple-select-label"
@@ -90,7 +98,7 @@ const Navbar = () => {
                             <MenuItem value={20}>Twenty</MenuItem>
                             <MenuItem value={30}>Thirty</MenuItem>
                         </Select>
-                        </FormControl>
+                        </FormControl> */}
                 </MenuItem>
                 <MenuItem>REGISTER</MenuItem>
                 <MenuItem>SIGN IN</MenuItem>
