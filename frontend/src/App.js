@@ -1,13 +1,30 @@
 import Home from "./Pages/Home";
-// import Product from "./Pages/Product";
+import NotFound from "./Pages/NotFound";
+import Product from "./Pages/Product";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-  <div>
-    <Home/>
-    {/* <Product/> */}
-  </div>
-  )
+    <BrowserRouter>
+      {/* <div>
+        <div> */}
+          <Routes> {/* Switch */}
+            {/* <Route exact path="/" component={Home} /> */}
+            <Route path="/" element={<Home/>} exact />
+            <Route path="/home" element={<Home/>} exact />
+
+            {/* <Route path="/Product" component={Product} /> */}
+            <Route path="/product" element={<Product/>} exact />
+
+            {/* <Route path="/employees/edit/:id" component={AddEmployee} /> */}
+
+            {/* <Route path="*" component={NotFound} /> */}
+            <Route path="*" element={<NotFound/>} exact />
+          </Routes>
+        {/* </div>
+      </div> */}
+    </BrowserRouter>
+  );
   
 };
 
