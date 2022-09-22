@@ -1,12 +1,14 @@
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import { useState } from 'react';
 import styled from "styled-components";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Newsletter from "../Components/Newsletter";
 import { mobile } from "../responsive";
+
 
 const Container = styled.div``;
 
@@ -118,6 +120,14 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const[name, setName] = useState('');
+  const[location, setLocation] = useState('');
+  const[department, setDepartment] = useState('');
+  const history = useHistory();
+  const {id} = useParams();
+
+  const [products, setProducts] = useState([]);
+
   return (
     <Container>
       <Navbar />
