@@ -63,3 +63,5 @@ https://icons8.com/icons
 
 //free image library 
 https://www.pexels.com/
+--------------------------------------------------------
+https://v5.reactrouter.com/web/api/Hooks/useparams
