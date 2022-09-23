@@ -1,13 +1,15 @@
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import Announcement from "../Components/Announcement";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Newsletter from "../Components/Newsletter";
 import { mobile } from "../responsive";
+import productService from '../services/product-service';
 
 
 const Container = styled.div``;
@@ -120,13 +122,23 @@ const Button = styled.button`
 `;
 
 const Product = () => {
-  const[name, setName] = useState('');
-  const[location, setLocation] = useState('');
-  const[department, setDepartment] = useState('');
-  const history = useHistory();
-  const {id} = useParams();
+  let { id } = useParams();
+  const [product, setProduct] = useState([]);
+ 
+  const init = () => {
+    productService.get(parseInt(id))
+    .then(response => {
+      console.log('Printing product data', response.data);
+      setProduct(response.data);
+    })
+    .catch(error => {
+      console.log('Something went wrong', error);
+    }) 
+  }
 
-  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    init();
+  }, []);
 
   return (
     <Container>
@@ -134,15 +146,15 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://images.pexels.com/photos/9660955/pexels-photo-9660955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+          <Image src={product.productImage} alt='image not found'/>
         </ImgContainer>
         <InfoContainer>
-          <Title>CANNON CAMERA</Title>
+          <Title>{product.productName}</Title>
           <Desc>
-            This is description of camera.
+            {product.productDescription}
           </Desc>
           <Price>
-          <CurrencyRupeeIcon></CurrencyRupeeIcon>500 per day
+          <CurrencyRupeeIcon></CurrencyRupeeIcon>{product.rentPerDay} per day
           </Price>
           {/* <FilterContainer>
             <Filter>

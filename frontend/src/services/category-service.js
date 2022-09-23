@@ -1,4 +1,4 @@
-import httpClient from '../http-common-products';
+import httpClient from '../http-common-categories';
 
 const getAll = () => {
   return httpClient.get('');
@@ -20,6 +20,6 @@ const remove = (id) => {
   return httpClient.delete(`/${id}`);
 };
 
-const productServices = { getAll, create, get, update, remove }
+const categoryServices = { getAll, create, get, update, remove }
 
-export default productServices;
+export default categoryServices;

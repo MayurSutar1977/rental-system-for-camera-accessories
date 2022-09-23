@@ -46,9 +46,9 @@ const Button = styled.button`
 const CategoryItem = ({item}) => {
   return (
     <Container>
-        <Image src={item.img} alt="image not found"></Image>
+        <Image src={item.categoryImage} alt="image not found"></Image>
         <Info>
-          <Title>{item.title}</Title>
+          <Title>{item.categoryName}</Title>
           <Button >SHOP NOW</Button>
         </Info>
     </Container>

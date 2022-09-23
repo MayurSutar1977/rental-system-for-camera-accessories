@@ -2,6 +2,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import styled from "styled-components"
+import {useNavigate} from 'react-router-dom';
 
 const ImageInfo = styled.div`
     opacity: 0;
@@ -70,16 +71,24 @@ const Icon = styled.div`
 `
 
 const Product = ({item}) => {
+    
+    const navigate = useNavigate();
+
+    const showProduct = (id) => {
+        let url = "/products/"+id;
+        navigate(url);
+    }
+
   return (
     <Container>
         <Circle></Circle>
-            <Image src={item.img} alt="image not found"></Image>
+            <Image src={item.productImage} alt="image not found"></Image>
             <ImageInfo>
                 <Icon>
                     <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                 </Icon>
                 <Icon>
-                    <SearchOutlinedIcon></SearchOutlinedIcon>
+                    <SearchOutlinedIcon onClick={()=>showProduct(item.id)}></SearchOutlinedIcon>
                 </Icon>
                 <Icon>
                     <FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
