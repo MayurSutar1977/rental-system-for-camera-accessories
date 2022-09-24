@@ -1,7 +1,7 @@
 import httpClient from '../http-common-categories';
 
 const getAll = () => {
-  return httpClient.get('');
+  return httpClient.get('/fetch-category');
 };
 
 const create = (data) => {

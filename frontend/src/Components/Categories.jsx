@@ -20,8 +20,8 @@ const Categories = () => {
   const init = () => {
     categoryService.getAll()
     .then(response => {
-      console.log('Printing product data', response.data);
-      setCategories(response.data);
+      console.log('Printing product data', response.data.result);
+      setCategories(response.data.result);
     })
     .catch(error => {
       console.log('Something went wrong', error);

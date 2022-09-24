@@ -18,8 +18,8 @@ const Products = () => {
   const init = () => {
     productService.getAll()
     .then(response => {
-      console.log('Printing product data', response.data);
-      setProducts(response.data);
+      console.log('Printing product data', response.data.result);
+      setProducts(response.data.result);
     })
     .catch(error => {
       console.log('Something went wrong', error);

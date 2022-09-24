@@ -1,7 +1,7 @@
 import httpClient from '../http-common-products';
 
 const getAll = () => {
-  return httpClient.get('');
+  return httpClient.get('/fetch-all-equipments');
 };
 
 const create = (data) => {
@@ -9,7 +9,7 @@ const create = (data) => {
 };
 
 const get = (id) => {
-  return httpClient.get(`${id}`);
+  return httpClient.get(`/get-equipment-by-id/${id}`);
 };
 
 const update = (data) => {

@@ -2,6 +2,7 @@ import Home from "./Pages/Home";
 import NotFound from "./Pages/NotFound";
 import Product from "./Pages/Product";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UserRegistration from "./Pages/UserRegistration";
 
 const App = () => {
   return (
@@ -26,6 +27,9 @@ const App = () => {
             {/* <Route path="/employees/edit/:id" component={AddEmployee} /> */}
 
             {/* <Route path="*" component={NotFound} /> */}
+
+            <Route path="/sign_up" element={<UserRegistration />} exact/>
+
             <Route path="*" element={<NotFound/>} exact />
           </Routes>
         {/* </div>

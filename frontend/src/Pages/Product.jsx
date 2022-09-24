@@ -128,8 +128,8 @@ const Product = () => {
   const init = () => {
     productService.get(parseInt(id))
     .then(response => {
-      console.log('Printing product data', response.data);
-      setProduct(response.data);
+      console.log('Printing product data', response.data.result);
+      setProduct(response.data.result);
     })
     .catch(error => {
       console.log('Something went wrong', error);
@@ -146,12 +146,12 @@ const Product = () => {
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src={product.productImage} alt='image not found'/>
+          <Image src={product.image} alt='image not found'/>
         </ImgContainer>
         <InfoContainer>
-          <Title>{product.productName}</Title>
+          <Title>{product.equipmentName}</Title>
           <Desc>
-            {product.productDescription}
+            {product.decription}
           </Desc>
           <Price>
           <CurrencyRupeeIcon></CurrencyRupeeIcon>{product.rentPerDay} per day
