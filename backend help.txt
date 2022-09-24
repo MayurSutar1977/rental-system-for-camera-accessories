@@ -1,0 +1,10 @@
+ide - sts
+perspective - spring 
+new Spring Starter Project
+dependancies 
+1.Spring Boot Devtools
+2.Lombok
+3.Validation
+4.Spring Data JPA
+5.MySQL Driver 
+6.Spring Web
