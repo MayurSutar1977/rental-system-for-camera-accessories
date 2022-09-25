@@ -12,6 +12,10 @@ const get = (id) => {
   return httpClient.get(`${id}`);
 };
 
+const getByName = (catName) => {
+  return httpClient.get(`/find-category-by-name/${catName}`);
+};
+
 const update = (data) => {
   return httpClient.put('', data);
 };
@@ -20,6 +24,6 @@ const remove = (id) => {
   return httpClient.delete(`/${id}`);
 };
 
-const categoryServices = { getAll, create, get, update, remove }
+const categoryServices = { getAll, create, get, getByName ,update, remove }
 
 export default categoryServices;

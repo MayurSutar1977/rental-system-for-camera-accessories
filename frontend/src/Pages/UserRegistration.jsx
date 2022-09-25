@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
@@ -56,6 +57,15 @@ const Button = styled.button`
 `;
 
 const UserRegistration = () => {
+
+  const navigate = useNavigate();
+
+  const goToHomePage = () => {
+      // let url = "/products/"+id;
+      navigate("/home");
+  }
+
+
   return (
     <Container>
       <Wrapper>
@@ -69,7 +79,7 @@ const UserRegistration = () => {
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
           <Button>CREATE</Button>
-          <Button>CANCEL</Button>
+          <Button onClick={goToHomePage}>CANCEL</Button>
           <Agreement>
             Already have an account <b>Login here</b>
           </Agreement>

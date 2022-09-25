@@ -3,9 +3,11 @@ import Badge from '@mui/material/Badge';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useNavigate } from 'react-router-dom';
+import categoryServices from '../services/category-service';
 
 
 const Container = styled.div`
@@ -38,6 +40,7 @@ const SearchContainer = styled.div`
 `
 const Input = styled.input`
     border: none;
+    text-align: center;
     ${mobile({ width: "50px" })}
 `
 
@@ -47,6 +50,7 @@ const Center = styled.div`
 `
 const Logo = styled.h1`
     font-weight: bold;
+    cursor: pointer;
     ${mobile({ fontSize: "24px" })}
 `
 
@@ -68,23 +72,48 @@ const MenuItem = styled.div`
 
 
 const Navbar = () => {
+
+    const [category, setCategory] = useState([]);
+    let [catName , setCatName] = useState("");
+
+    const navigate = useNavigate();
+
+    const goTOSignupPage = () => {
+        navigate("/sign_up");
+    }
+
+    const goTOHomePage = () => {
+        navigate("/home");
+    }
+
+    const searchForCategory = () => {
+        categoryServices.getByName(catName).then(response => {
+            console.log('Printing product data', response.data.result);
+            setCategory(response.data.result);
+          })
+          .catch(error => {
+            console.log('Something went wrong', error);
+          }) 
+    }
+
   return (
     <Container>
         <Wrapper>
             <Left>
                 <Language>EN</Language>
                 <SearchContainer>
-                    <Input></Input>
-                    <SearchOutlinedIcon style={{color:"gray",fontSize:16}}></SearchOutlinedIcon>  
+                    <Input placeholder='search for category'></Input>
+                    &nbsp;
+                    <SearchOutlinedIcon style={{color:"gray",fontSize:16,cursor: "pointer"}} onClick={searchForCategory}></SearchOutlinedIcon>  
                 </SearchContainer>  
             </Left>
             <Center>
-                <Logo>RSFCA.</Logo>
+                <Logo onClick={goTOHomePage}>RSFCA.</Logo>
             </Center>
             <Right>
                 <MenuItem>
-                    <LocationOnOutlinedIcon style={{color:"gray",fontSize:16}}></LocationOnOutlinedIcon>
-                    &nbsp; DELHI
+                    {/* <LocationOnOutlinedIcon style={{color:"gray",fontSize:16}}></LocationOnOutlinedIcon>
+                    &nbsp; DELHI */}
                     {/* <FormControl fullWidth>
                         <InputLabel id="demo-simple-select-label">Age</InputLabel>
                         <Select
@@ -100,13 +129,13 @@ const Navbar = () => {
                         </Select>
                         </FormControl> */}
                 </MenuItem>
-                <MenuItem>REGISTER</MenuItem>
+                <MenuItem onClick={goTOSignupPage}>REGISTER</MenuItem>
                 <MenuItem>SIGN IN</MenuItem>
-                <MenuItem>
+                {/* <MenuItem>
                     <Badge badgeContent={1} color="secondary">
                         <ShoppingCartOutlinedIcon color="action" />
                     </Badge>
-                </MenuItem>
+                </MenuItem> */}
             </Right>
         </Wrapper>
     </Container>

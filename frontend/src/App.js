@@ -3,6 +3,7 @@ import NotFound from "./Pages/NotFound";
 import Product from "./Pages/Product";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserRegistration from "./Pages/UserRegistration";
+import ViewUserProfilePage from "./Pages/ViewUserProfilePage";
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
             {/* <Route path="*" component={NotFound} /> */}
 
             <Route path="/sign_up" element={<UserRegistration />} exact/>
-
+            <Route path="/ViewUserProfile/:id" element={<ViewUserProfilePage />} exact/>
             <Route path="*" element={<NotFound/>} exact />
           </Routes>
         {/* </div>

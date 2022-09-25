@@ -5,6 +5,9 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,6 +34,7 @@ public class UserProfileInDto {
 	private String idNumber;
 
 	@NotNull
+	@JsonDeserialize(as = LocalDate.class)
 	private LocalDate dateOfBirth;
 
 	private String profileImage;
